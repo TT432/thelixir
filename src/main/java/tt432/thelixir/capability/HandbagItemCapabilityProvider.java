@@ -3,8 +3,6 @@ package tt432.thelixir.capability;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.CapabilityProvider;
-import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -14,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author DustW
  **/
-public class HandbagItemCapabilityProvider extends CapabilityProvider<HandbagItemCapabilityProvider> implements INBTSerializable<CompoundTag> {
+public class HandbagItemCapabilityProvider extends AbstractCapabilityProvider<HandbagItemCapabilityProvider> {
     private static final String ITEMS_KEY = "items";
 
     protected LazyOptional<ItemStackHandler> handler;
