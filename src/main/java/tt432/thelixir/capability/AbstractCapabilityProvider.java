@@ -10,6 +10,7 @@ import net.minecraftforge.common.util.INBTSerializable;
  **/
 public abstract class AbstractCapabilityProvider<B extends ICapabilityProviderImpl<B>>
         extends CapabilityProvider<B> implements INBTSerializable<CompoundTag> {
+
     protected AbstractCapabilityProvider(Class<B> baseClass) {
         super(baseClass);
     }
