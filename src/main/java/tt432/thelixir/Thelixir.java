@@ -4,8 +4,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import tt432.thelixir.block.ModBlocks;
 import tt432.thelixir.item.ModItems;
-import tt432.thelixir.item.VanillaItems;
 
 /**
  * @author DustW
@@ -25,6 +25,7 @@ public class Thelixir {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.ITEMS.register(bus);
-        VanillaItems.ITEMS.register(bus);
+        ModItems.VANILLA.register(bus);
+        ModBlocks.BLOCKS.register(bus);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "thelixir:block/shooting_platform"
+    }
+  }
+}
