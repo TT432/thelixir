@@ -14,7 +14,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.scores.Score;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 import tt432.thelixir.net.ModNetManager;
 import tt432.thelixir.net.server.TheExlxirSyncS2C;
@@ -22,7 +21,6 @@ import tt432.thelixir.net.server.TheExlxirSyncS2C;
 /**
  * @author DustW
  **/
-@Mod.EventBusSubscriber
 public class TheElixirPlugin extends PlayerPlugin {
 
     @Override
