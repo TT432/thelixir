@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tt432.thelixir.block.ModBlocks;
 import tt432.thelixir.item.ModItems;
+import tt432.thelixir.net.ModNetManager;
 
 /**
  * @author DustW
@@ -27,5 +28,7 @@ public class Thelixir {
         ModItems.ITEMS.register(bus);
         ModItems.VANILLA.register(bus);
         ModBlocks.BLOCKS.register(bus);
+
+        ModNetManager.register();
     }
 }

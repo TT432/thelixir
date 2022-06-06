@@ -1,9 +1,6 @@
 package tt432.thelixir.capability.player;
 
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.damagesource.DamageSource;
@@ -17,36 +14,16 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.scores.Score;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.event.entity.EntityEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
+import tt432.thelixir.net.ModNetManager;
+import tt432.thelixir.net.server.TheExlxirSyncS2C;
 
 /**
  * @author DustW
  **/
 @Mod.EventBusSubscriber
 public class TheElixirPlugin extends PlayerPlugin {
-
-    private static final EntityDataAccessor<Boolean> THE_ELIXIR =
-            SynchedEntityData.defineId(Player.class, EntityDataSerializers.BOOLEAN);
-
-    @SubscribeEvent
-    public static void onEvent(EntityEvent.EntityConstructing event) {
-        if (event.getEntity() instanceof Player player) {
-            player.getEntityData().define(THE_ELIXIR, false);
-        }
-    }
-
-    @Override
-    public boolean isActive(Player player) {
-        return player.getEntityData().get(THE_ELIXIR);
-    }
-
-    @Override
-    public void setActive(boolean active, Player player) {
-        player.getEntityData().set(THE_ELIXIR, active);
-    }
 
     @Override
     public boolean onDeath(@Nullable Entity attacker, DamageSource source, Player player) {
@@ -85,5 +62,12 @@ public class TheElixirPlugin extends PlayerPlugin {
         player.getCombatTracker().recheckStatus();
 
         return false;
+    }
+
+    @Override
+    protected void activeChanged(Player player) {
+        if (player instanceof ServerPlayer sPlayer) {
+            ModNetManager.sendToPlayer(new TheExlxirSyncS2C(isActive(player)), sPlayer);
+        }
     }
 }

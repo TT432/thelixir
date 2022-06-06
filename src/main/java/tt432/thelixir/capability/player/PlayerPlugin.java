@@ -12,14 +12,17 @@ import org.jetbrains.annotations.Nullable;
  **/
 public class PlayerPlugin implements INBTSerializable<CompoundTag> {
 
-    boolean active;
+    private boolean active;
 
     public boolean isActive(Player player) {
         return active;
     }
 
     public void setActive(boolean active, Player player) {
-        this.active = active;
+        if (this.active != active) {
+            this.active = active;
+            activeChanged(player);
+        }
     }
 
     public boolean onDeath(@Nullable Entity attacker, DamageSource source, Player player) {
@@ -33,6 +36,10 @@ public class PlayerPlugin implements INBTSerializable<CompoundTag> {
     @Override
     public CompoundTag serializeNBT() {
         return new CompoundTag();
+    }
+
+    protected void activeChanged(Player player) {
+
     }
 
     @Override
