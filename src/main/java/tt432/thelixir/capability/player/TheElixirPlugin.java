@@ -33,7 +33,10 @@ public class TheElixirPlugin extends PlayerPlugin {
     @SubscribeEvent
     public static void onEvent(EntityEvent.EntityConstructing event) {
         if (event.getEntity() instanceof Player player) {
-            THE_ELIXIR = SynchedEntityData.defineId(Player.class, EntityDataSerializers.BOOLEAN);
+            if (THE_ELIXIR == null) {
+                THE_ELIXIR = SynchedEntityData.defineId(Player.class, EntityDataSerializers.BOOLEAN);
+            }
+
             player.getEntityData().define(THE_ELIXIR, false);
         }
     }
