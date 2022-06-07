@@ -17,8 +17,8 @@ import tt432.thelixir.capability.player.TheElixirPlayerCapability;
 /**
  * @author DustW
  **/
-public class TheElixirItem extends Item {
-    public TheElixirItem(Properties pProperties) {
+public class HumanGlassItem extends Item {
+    public HumanGlassItem(Properties pProperties) {
         super(pProperties);
     }
 
@@ -29,7 +29,7 @@ public class TheElixirItem extends Item {
                 if (pPlayer instanceof ServerPlayer serverplayer) {
                     serverplayer.awardStat(Stats.ITEM_USED.get(this), 1);
 
-                    handler.setActive(TheElixirPlayerCapability.THE_ELIXIR, true);
+                    handler.setActive(TheElixirPlayerCapability.THE_ELIXIR, false);
                 }
                 else {
                     Minecraft mc = Minecraft.getInstance();

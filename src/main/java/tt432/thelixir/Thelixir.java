@@ -18,7 +18,7 @@ public class Thelixir {
     public static final CreativeModeTab MOD_TAB = new CreativeModeTab(MOD_ID) {
         @Override
         public ItemStack makeIcon() {
-            return ItemStack.EMPTY;
+            return new ItemStack(ModItems.THE_ELIXIR.get());
         }
     };
 

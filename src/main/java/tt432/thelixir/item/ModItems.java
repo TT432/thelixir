@@ -29,6 +29,9 @@ public class ModItems {
     public static final RegistryObject<Item> THE_ELIXIR = ITEMS.register("the_elixir",
             () -> new TheElixirItem(defaultProperties()));
 
+    public static final RegistryObject<Item> HUMAN_GLASS = ITEMS.register("human_glass",
+            () -> new HumanGlassItem(defaultProperties()));
+
 
     public static final RegistryObject<Item> SHOOTING_PLATFORM = block(ModBlocks.SHOOTING_PLATFORM);
 
