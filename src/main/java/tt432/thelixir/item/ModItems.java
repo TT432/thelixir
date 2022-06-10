@@ -32,6 +32,9 @@ public class ModItems {
     public static final RegistryObject<Item> HUMAN_GLASS = ITEMS.register("human_glass",
             () -> new HumanGlassItem(defaultProperties()));
 
+    public static final RegistryObject<Item> BREEZE_SWORD = ITEMS.register("breeze_sword",
+            () -> new BreezeSword(defaultProperties()));
+
 
     public static final RegistryObject<Item> SHOOTING_PLATFORM = block(ModBlocks.SHOOTING_PLATFORM);
 

@@ -25,9 +25,9 @@ public class HumanGlassItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         pPlayer.getCapability(Registry.CAPABILITY).ifPresent(handler -> {
-            if (!handler.isActive(TheElixirPlayerCapability.THE_ELIXIR)) {
+            if (handler.isActive(TheElixirPlayerCapability.THE_ELIXIR)) {
                 if (pPlayer instanceof ServerPlayer serverplayer) {
-                    serverplayer.awardStat(Stats.ITEM_USED.get(this), 1);
+                    serverplayer.awardStat(Stats.ITEM_USED.get(this));
 
                     handler.setActive(TheElixirPlayerCapability.THE_ELIXIR, false);
                 }

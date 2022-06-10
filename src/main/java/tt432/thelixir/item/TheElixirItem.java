@@ -27,7 +27,7 @@ public class TheElixirItem extends Item {
         pPlayer.getCapability(Registry.CAPABILITY).ifPresent(handler -> {
             if (!handler.isActive(TheElixirPlayerCapability.THE_ELIXIR)) {
                 if (pPlayer instanceof ServerPlayer serverplayer) {
-                    serverplayer.awardStat(Stats.ITEM_USED.get(this), 1);
+                    serverplayer.awardStat(Stats.ITEM_USED.get(this));
 
                     handler.setActive(TheElixirPlayerCapability.THE_ELIXIR, true);
                 }
