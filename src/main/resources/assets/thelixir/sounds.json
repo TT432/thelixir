@@ -1,0 +1,9 @@
+{
+  "fox_tail": {
+    "replace": false,
+    "subtitle": "thelixir.fox_tail",
+    "sounds": [
+      "thelixir:fox_tail"
+    ]
+  }
+}

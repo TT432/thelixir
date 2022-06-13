@@ -14,6 +14,7 @@ import tt432.thelixir.capability.Registry;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
@@ -26,15 +27,39 @@ public class TheElixirPlayerCapability implements INBTSerializable<CompoundTag> 
     Player player;
 
     public static final String THE_ELIXIR = "THE_ELIXIR";
+    public static final String FOX_TAIL = "FOX_TAIL";
 
     public TheElixirPlayerCapability(Player player) {
         this.player = player;
+    }
+
+    public static void ifActive(Player player, String name, Consumer<TheElixirPlayerCapability> consumer) {
+        ifActiveElse(player, name, consumer, null);
+    }
+
+    public static void ifActiveElse(Player player,
+                                    String name,
+                                    @Nullable Consumer<TheElixirPlayerCapability> consumer,
+                                    @Nullable Consumer<TheElixirPlayerCapability> elseConsumer) {
+        player.getCapability(Registry.CAPABILITY).ifPresent(capability -> {
+            if (capability.isActive(name)) {
+                if (consumer != null) {
+                    consumer.accept(capability);
+                }
+            }
+            else {
+                if (elseConsumer != null) {
+                    elseConsumer.accept(capability);
+                }
+            }
+        });
     }
 
     private Map<String, PlayerPlugin> built() {
         Map<String, PlayerPlugin> result = new HashMap<>();
 
         result.put(THE_ELIXIR, new TheElixirPlugin());
+        result.put(FOX_TAIL, new FoxTailPlugin());
 
         return result;
     }

@@ -30,6 +30,10 @@ public class TheElixirItem extends Item {
                     serverplayer.awardStat(Stats.ITEM_USED.get(this));
 
                     handler.setActive(TheElixirPlayerCapability.THE_ELIXIR, true);
+
+                    if (!pPlayer.isCreative()) {
+                        pPlayer.getItemInHand(pUsedHand).shrink(1);
+                    }
                 }
                 else {
                     Minecraft mc = Minecraft.getInstance();

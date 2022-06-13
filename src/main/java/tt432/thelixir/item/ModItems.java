@@ -24,16 +24,19 @@ public class ModItems {
     }
 
     public static final RegistryObject<Item> HANDBAG = ITEMS.register("handbag",
-            () -> new HandbagItem(defaultProperties()));
+            () -> new HandbagItem(defaultProperties().stacksTo(1)));
 
     public static final RegistryObject<Item> THE_ELIXIR = ITEMS.register("the_elixir",
-            () -> new TheElixirItem(defaultProperties()));
+            () -> new TheElixirItem(defaultProperties().stacksTo(1)));
 
     public static final RegistryObject<Item> HUMAN_GLASS = ITEMS.register("human_glass",
-            () -> new HumanGlassItem(defaultProperties()));
+            () -> new HumanGlassItem(defaultProperties().stacksTo(1)));
 
     public static final RegistryObject<Item> BREEZE_SWORD = ITEMS.register("breeze_sword",
             () -> new BreezeSword(defaultProperties()));
+
+    public static final RegistryObject<Item> FOX_TAIL = ITEMS.register("fox_tail",
+            () -> new FoxTailItem(defaultProperties().stacksTo(1)));
 
 
     public static final RegistryObject<Item> SHOOTING_PLATFORM = block(ModBlocks.SHOOTING_PLATFORM);

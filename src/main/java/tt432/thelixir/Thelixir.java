@@ -7,6 +7,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tt432.thelixir.block.ModBlocks;
 import tt432.thelixir.item.ModItems;
 import tt432.thelixir.net.ModNetManager;
+import tt432.thelixir.sound.ModSoundEvents;
 
 /**
  * @author DustW
@@ -28,6 +29,7 @@ public class Thelixir {
         ModItems.ITEMS.register(bus);
         ModItems.VANILLA.register(bus);
         ModBlocks.BLOCKS.register(bus);
+        ModSoundEvents.SOUNDS.register(bus);
 
         ModNetManager.register();
     }
