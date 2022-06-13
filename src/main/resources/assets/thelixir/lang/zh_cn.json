@@ -1,12 +1,12 @@
 {
   "itemGroup.thelixir": "The Elixir",
 
-  "item.thelixir.handbag":"Handbag",
-  "item.thelixir.the_elixir": "The Elixir",
-  "item.thelixir.human_glass":"Human Glass",
-  "item.thelixir.breeze_sword": "Breeze Sword",
-  "item.thelixir.fox_tail":"Fox Tail",
-  "block.thelixir.shooting_platform": "Shooting Platform",
+  "item.thelixir.handbag":"手提包",
+  "item.thelixir.the_elixir": "不死灵药",
+  "item.thelixir.human_glass":"人里之镜",
+  "item.thelixir.breeze_sword": "清风剑",
+  "item.thelixir.fox_tail":"狐狸尾巴",
+  "block.thelixir.shooting_platform": "射击平台",
 
   "tooltip.fox_tail.1": "小心不要被抓住狐狸尾巴",
 
