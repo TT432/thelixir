@@ -39,7 +39,7 @@ public class BreezeSword extends SwordItem {
     public BreezeSword(Properties pProperties) {
         super(new ForgeTier(42, "Breeze".hashCode(), 42, 3, 7,
                         Tags.Blocks.CHESTS, () -> Ingredient.of(new ItemStack(Items.IRON_INGOT))),
-                1, 1, pProperties);
+                1, 42, pProperties);
     }
 
     @Override
