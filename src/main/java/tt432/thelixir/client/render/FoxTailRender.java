@@ -26,6 +26,10 @@ public class FoxTailRender {
     public static void onPlayerRender(RenderPlayerEvent event) {
         var player = event.getPlayer();
 
+        if (player.isSpectator()) {
+            return;
+        }
+
         TheElixirPlayerCapability.ifActive(player, TheElixirPlayerCapability.FOX_TAIL, (cap) -> {
             ModelPart foxModelRoot = Minecraft.getInstance().getEntityModels().bakeLayer(ModelLayers.FOX);
             FoxModel<Fox> foxModel = new FoxModel<>(foxModelRoot);
