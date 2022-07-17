@@ -8,8 +8,8 @@
   "item.thelixir.fox_tail":"Fox Tail",
   "block.thelixir.shooting_platform": "Shooting Platform",
 
-  "tooltip.fox_tail.1": "小心不要被抓住狐狸尾巴",
+  "tooltip.fox_tail.1": "Watch your fox tail and don't get caught",
 
-  "tooltip.breeze_sword.attack.1": "进行 普通攻击 -> 挑飞并禁动 -> 随机负面 buff 的循环",
-  "tooltip.breeze_sword.attack.2": "连击时会不断增加伤害直到最高为 42"
+  "tooltip.breeze_sword.attack.1": "Perform a cycle of normal attack -> pick and ban -> random negative buff",
+  "tooltip.breeze_sword.attack.2": "The damage is increased by the combo until it reaches a maximum of 42"
 }
