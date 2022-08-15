@@ -1,4 +1,4 @@
-package tt432.thelixir.capability;
+package tt432.thelixir.common.capability;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -14,8 +14,8 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tt432.thelixir.Thelixir;
-import tt432.thelixir.capability.player.TheElixirPlayerCapability;
-import tt432.thelixir.capability.player.TheElixirPlayerCapabilityProvider;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapability;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapabilityProvider;
 
 /**
  * @author DustW

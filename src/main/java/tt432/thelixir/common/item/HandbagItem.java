@@ -1,19 +1,24 @@
-package tt432.thelixir.item;
+package tt432.thelixir.common.item;
 
+import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.SlotAccess;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ClickAction;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import tt432.thelixir.capability.HandbagItemCapabilityProvider;
+import tt432.thelixir.common.capability.HandbagItemCapabilityProvider;
+import tt432.thelixir.common.tooltip.HandbagTooltip;
 
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * @author DustW
@@ -28,7 +33,46 @@ public class HandbagItem extends Item {
     @Nullable
     @Override
     public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        return new HandbagItemCapabilityProvider();
+        int row = row(nbt);
+        int col = col(nbt);
+
+        String parent = "Parent";
+
+        if (nbt != null && nbt.contains(parent)) {
+            row = row(nbt.getCompound(parent));
+            col = col(nbt.getCompound(parent));
+        }
+
+        CompoundTag tag = stack.getOrCreateTag();
+        tag.putInt("row", row);
+        tag.putInt("col", col);
+
+        return new HandbagItemCapabilityProvider(row, col);
+    }
+
+    @Override
+    public @NotNull Optional<TooltipComponent> getTooltipImage(ItemStack pStack) {
+        NonNullList<ItemStack> list = NonNullList.create();
+
+        pStack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(items -> {
+            for (int i = 0; i < items.getSlots(); i++) {
+                list.add(items.getStackInSlot(i));
+            }
+        });
+
+        return Optional.of(new HandbagTooltip(list, row(pStack.getTag()), col(pStack.getTag())));
+    }
+
+    int row(@Nullable CompoundTag tag) {
+        if (tag != null)
+            return tag.getInt("row");
+        return 6;
+    }
+
+    int col(@Nullable CompoundTag tag) {
+        if (tag != null)
+            return tag.getInt("col");
+        return 6;
     }
 
     @Nullable
@@ -53,13 +97,6 @@ public class HandbagItem extends Item {
     }
 
     @Override
-    public boolean overrideStackedOnOther(ItemStack pStack, Slot pSlot, ClickAction pAction, Player pPlayer) {
-
-
-        return false;
-    }
-
-    @Override
     public boolean overrideOtherStackedOnMe(ItemStack pStack, ItemStack pOther, Slot pSlot, ClickAction pAction, Player pPlayer, SlotAccess pAccess) {
         if (!pSlot.allowModification(pPlayer)) {
             return false;
@@ -79,7 +116,8 @@ public class HandbagItem extends Item {
             if (!pOther.isEmpty()) {
                 if (pAction == ClickAction.PRIMARY) {
                     for (int i = 0; i < handler.getSlots(); i++) {
-                        if ((pOther = handler.insertItem(i, pOther, false)).isEmpty()) {
+                        pOther = handler.insertItem(i, pOther, false);
+                        if (pOther.isEmpty()) {
                             pAccess.set(ItemStack.EMPTY);
                             changed = true;
                             break;

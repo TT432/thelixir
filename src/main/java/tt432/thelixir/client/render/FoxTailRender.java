@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import tt432.thelixir.capability.player.TheElixirPlayerCapability;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapability;
 
 /**
  * @author DustW

@@ -1,4 +1,4 @@
-package tt432.thelixir.capability;
+package tt432.thelixir.common.capability;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -16,11 +16,15 @@ public class HandbagItemCapabilityProvider extends AbstractCapabilityProvider<Ha
     private static final String ITEMS_KEY = "items";
 
     protected LazyOptional<ItemStackHandler> handler;
+    protected int row;
+    protected int column;
 
-    public HandbagItemCapabilityProvider() {
+    public HandbagItemCapabilityProvider(int row, int column) {
         super(HandbagItemCapabilityProvider.class);
 
-        handler = LazyOptional.of(() -> new ItemStackHandler(6));
+        handler = LazyOptional.of(() -> new ItemStackHandler(row * column));
+        this.row = row;
+        this.column = column;
     }
 
     @NotNull
@@ -32,6 +36,8 @@ public class HandbagItemCapabilityProvider extends AbstractCapabilityProvider<Ha
     @Override
     public CompoundTag serializeNBT() {
         var result = new CompoundTag();
+        result.putInt("row", row);
+        result.putInt("col", column);
         result.put(ITEMS_KEY, handler.resolve().get().serializeNBT());
         return result;
     }
@@ -39,5 +45,7 @@ public class HandbagItemCapabilityProvider extends AbstractCapabilityProvider<Ha
     @Override
     public void deserializeNBT(CompoundTag nbt) {
         handler.resolve().get().deserializeNBT(nbt.getCompound(ITEMS_KEY));
+        row = nbt.getInt("row");
+        column = nbt.getInt("col");
     }
 }

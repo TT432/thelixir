@@ -1,4 +1,4 @@
-package tt432.thelixir.command;
+package tt432.thelixir.common.command;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
@@ -8,8 +8,8 @@ import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import tt432.thelixir.capability.Registry;
-import tt432.thelixir.capability.player.TheElixirPlayerCapability;
+import tt432.thelixir.common.capability.Registry;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapability;
 
 import java.util.Collection;
 

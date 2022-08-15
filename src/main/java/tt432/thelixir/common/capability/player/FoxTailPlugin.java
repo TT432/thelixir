@@ -1,4 +1,4 @@
-package tt432.thelixir.capability.player;
+package tt432.thelixir.common.capability.player;
 
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

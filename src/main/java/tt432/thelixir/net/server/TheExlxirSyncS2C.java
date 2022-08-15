@@ -3,8 +3,8 @@ package tt432.thelixir.net.server;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;
-import tt432.thelixir.capability.Registry;
-import tt432.thelixir.capability.player.TheElixirPlayerCapability;
+import tt432.thelixir.common.capability.Registry;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapability;
 
 import java.util.function.Supplier;
 

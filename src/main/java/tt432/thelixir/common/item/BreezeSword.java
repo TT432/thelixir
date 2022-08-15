@@ -1,4 +1,4 @@
-package tt432.thelixir.item;
+package tt432.thelixir.common.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

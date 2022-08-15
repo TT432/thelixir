@@ -4,10 +4,10 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import tt432.thelixir.block.ModBlocks;
-import tt432.thelixir.item.ModItems;
+import tt432.thelixir.common.block.ModBlocks;
+import tt432.thelixir.common.item.ModItems;
 import tt432.thelixir.net.ModNetManager;
-import tt432.thelixir.sound.ModSoundEvents;
+import tt432.thelixir.common.sound.ModSoundEvents;
 
 /**
  * @author DustW

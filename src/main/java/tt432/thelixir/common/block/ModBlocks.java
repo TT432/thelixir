@@ -1,4 +1,4 @@
-package tt432.thelixir.block;
+package tt432.thelixir.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;

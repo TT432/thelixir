@@ -1,4 +1,4 @@
-package tt432.thelixir.sound;
+package tt432.thelixir.common.sound;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;

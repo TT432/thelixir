@@ -1,4 +1,4 @@
-package tt432.thelixir.capability;
+package tt432.thelixir.common.capability;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraftforge.common.capabilities.CapabilityProvider;

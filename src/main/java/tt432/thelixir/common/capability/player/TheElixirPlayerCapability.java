@@ -1,4 +1,4 @@
-package tt432.thelixir.capability.player;
+package tt432.thelixir.common.capability.player;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.damagesource.DamageSource;
@@ -10,7 +10,7 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
-import tt432.thelixir.capability.Registry;
+import tt432.thelixir.common.capability.Registry;
 
 import java.util.HashMap;
 import java.util.Map;

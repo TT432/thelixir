@@ -1,4 +1,4 @@
-package tt432.thelixir.capability.player;
+package tt432.thelixir.common.capability.player;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -7,8 +7,8 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import tt432.thelixir.capability.AbstractCapabilityProvider;
-import tt432.thelixir.capability.Registry;
+import tt432.thelixir.common.capability.AbstractCapabilityProvider;
+import tt432.thelixir.common.capability.Registry;
 
 /**
  * @author DustW

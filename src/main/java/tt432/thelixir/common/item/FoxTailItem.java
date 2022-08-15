@@ -1,4 +1,4 @@
-package tt432.thelixir.item;
+package tt432.thelixir.common.item;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -10,8 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import tt432.thelixir.capability.player.TheElixirPlayerCapability;
-import tt432.thelixir.sound.ModSoundEvents;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapability;
+import tt432.thelixir.common.sound.ModSoundEvents;
 
 import java.util.List;
 

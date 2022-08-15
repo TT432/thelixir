@@ -6,7 +6,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import tt432.thelixir.block.ModBlocks;
+import tt432.thelixir.common.block.ModBlocks;
 
 /**
  * @author DustW

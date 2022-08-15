@@ -1,4 +1,4 @@
-package tt432.thelixir.item;
+package tt432.thelixir.common.item;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleTypes;
@@ -11,8 +11,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import tt432.thelixir.capability.Registry;
-import tt432.thelixir.capability.player.TheElixirPlayerCapability;
+import tt432.thelixir.common.capability.Registry;
+import tt432.thelixir.common.capability.player.TheElixirPlayerCapability;
 
 /**
  * @author DustW

@@ -1,4 +1,4 @@
-package tt432.thelixir.item;
+package tt432.thelixir.common.item;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tt432.thelixir.Thelixir;
-import tt432.thelixir.block.ModBlocks;
+import tt432.thelixir.common.block.ModBlocks;
 
 /**
  * @author DustW
