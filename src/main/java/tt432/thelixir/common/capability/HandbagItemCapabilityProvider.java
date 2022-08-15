@@ -44,15 +44,16 @@ public class HandbagItemCapabilityProvider extends AbstractCapabilityProvider<Ha
 
     @Override
     public void deserializeNBT(CompoundTag nbt) {
-        handler.resolve().get().deserializeNBT(nbt.getCompound(ITEMS_KEY));
+        ItemStackHandler handler = this.handler.resolve().get();
+        handler.deserializeNBT(nbt.getCompound(ITEMS_KEY));
 
         if (nbt.contains("row") && nbt.contains("col")) {
             row = nbt.getInt("row");
             column = nbt.getInt("col");
         }
         else {
-            row = 6;
-            column = 6;
+            row = handler.getSlots();
+            column = 1;
         }
     }
 }
