@@ -22,7 +22,7 @@ public class ModCommands {
     @SubscribeEvent
     public static void onServerStaring(RegisterCommandsEvent event) {
         CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-        dispatcher.register(
+        var command = dispatcher.register(
                 Commands.literal(Thelixir.MOD_ID).then(
                         Commands.literal("human").then(
                                 Commands.argument("targets", EntityArgument.entities())
@@ -58,5 +58,7 @@ public class ModCommands {
                                 })
                 )
         );
+
+        dispatcher.register(Commands.literal("elixir").redirect(command));
     }
 }
